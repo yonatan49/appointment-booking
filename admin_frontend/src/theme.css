@@ -1,0 +1,54 @@
+:root {
+  /* Primary (Pink/Accent) */
+  --color-primary: #e91e63;
+  --color-primary-dark: #be185d;
+  --color-primary-light: #f4a7b9;
+  --color-primary-bg: #ffe0ec;
+  --color-primary-gradient: linear-gradient(180deg, #f4a7b9, #d63d6c);
+  --color-primary-hover: #ec008c;
+  --color-primary-strong: #db2777;
+
+  /* Secondary (Blue/Gray) */
+  --color-secondary: #334155;
+  --color-secondary-light: #f1f4ff;
+  --color-secondary-bg: #f9f9f9;
+  --color-secondary-border: #e0e0e0;
+  --color-secondary-dark: #213547;
+
+  /* Backgrounds */
+  --color-bg: #fff;
+  --color-bg-alt: #f4f4f4;
+  --color-bg-light: #fefefe;
+  --color-bg-pink: #fdecef;
+  --color-bg-pink-hover: #fbe1e7;
+
+  /* Borders */
+  --color-border: #ddd;
+  --color-border-light: #eee;
+  --color-border-strong: #ccc;
+  --color-border-pink: #f4a7b9;
+  --color-border-gray: #e5e7eb;
+  --color-border-blue: #e6e9ef;
+
+  /* Text */
+  --color-text: #111;
+  --color-text-dark: #333;
+  --color-text-light: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-gray: #374151;
+  --color-text-error: #cc0000;
+  --color-text-link: #213547;
+
+  /* Status */
+  --color-success: #28a745;
+  --color-warning: #ff9800;
+  --color-info: #3f51b5;
+  --color-danger: #e53935;
+  --color-unknown: #9e9e9e;
+  --color-notify: #ef4444;
+
+  /* Misc */
+  --color-shadow: rgba(214, 61, 108, 0.15);
+  --color-shadow-hover: rgba(214, 61, 108, 0.25);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+}

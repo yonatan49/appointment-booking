@@ -1,0 +1,364 @@
+.dashboard-container-1 {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Week-of header styling */
+.week-of-header {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+  gap: 12px;
+}
+
+.week-of-header .week-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.week-of-header .title {
+  font-weight: 700;
+  color: var(--color-text-gray);
+}
+
+.week-of-header .subtitle {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.week-of-header .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.week-of-header .nav-btn:hover {
+  background: var(--color-secondary-bg);
+}
+
+.week-of-header .nav-btn .icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Responsive: hide button labels on smaller screens, keep arrows */
+@media (max-width: 640px) {
+  .week-of-header .nav-btn .label { display: none; }
+}
+
+/* Summary bar */
+.summary-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.stat-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.week-nav button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background-color: var(--color-primary-light);
+  color: var(--color-bg);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-wrapper {
+  overflow: auto; /* single scroll container for both axes */
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  position: relative;
+}
+
+.calendar-grid {
+  min-width: 900px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  background-color: var(--color-secondary-bg);
+  border-bottom: 1px solid var(--color-border-strong);
+  position: sticky;
+  top: 0;
+  z-index: 30; /* above sticky time column */
+}
+
+.day-col-header.today {
+  background: var(--color-bg-pink);
+}
+
+.time-col-header, .day-col-header {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar-body {
+  /* Let the wrapper handle scrolling to keep header/body aligned */
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  grid-auto-rows: 60px;
+  position: relative;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 59px,
+    #eee 60px
+  );
+}
+
+/* Flatten rows so children participate directly in the parent grid */
+.calendar-row {
+  display: contents;
+}
+
+.time-col,
+.time-col-header {
+  position: sticky;
+  left: 0;
+  background-color: var(--color-secondary-bg);
+  z-index: 20;
+  border-right: 1px solid var(--color-border);
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Add a subtle divider shadow to separate sticky time column from scrollable area */
+.time-col::after, .time-col-header::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ddd;
+}
+
+.calendar-cell {
+  padding: 8px;
+  text-align: center;
+  border-left: 1px solid var(--color-border-light);
+  position: relative;
+  height: auto; /* grid rows define height */
+  background-color: var(--color-bg); /* ensure cells don't inherit page bg */
+  border-top: 1px solid var(--color-border-light); /* row separators */
+}
+
+.calendar-cell.booked {
+  /* Turn the booked grid item into a container for a card */
+  background-color: transparent;
+  border-left: 1px solid var(--color-border-light);
+  position: relative;
+  display: flex;
+  align-items: center; /* vertical center the card */
+  justify-content: center; /* horizontal center the card */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* subtle column highlight for today without changing cell background */
+.calendar-cell.today-col {
+  background: var(--color-bg-pink) !important;
+  box-shadow: none;
+}
+
+.appt-content {
+  /* Card look */
+  background: var(--color-bg-pink); /* light pink */
+  border: 1px solid var(--color-border-pink);
+  box-shadow: 0 6px 16px var(--color-shadow);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical center content inside multi-row spans */
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-primary-dark);
+  position: relative;
+}
+
+/* Decorative left accent bar for the card */
+.appt-content::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--color-primary-gradient);
+}
+
+.small-text {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Hover state to make the card pop a bit more */
+.calendar-cell.booked:hover .appt-content {
+  box-shadow: 0 10px 20px var(--color-shadow-hover);
+  transform: translateY(-1px);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background: var(--color-bg-pink-hover); /* slightly stronger pink on hover */
+}
+
+/* Continuation placeholders shouldn't look clickable */
+.calendar-cell.booked.continuation {
+  cursor: default;
+  display: none; /* do not occupy grid cells so the card can span */
+}
+
+/* Status badge on card */
+.status-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  color: var(--color-bg);
+}
+
+.status-confirmed { background: var(--color-success); }
+.status-pending { background: var(--color-warning); }
+.status-completed { background: var(--color-info); }
+.status-cancelled, .status-canceled { background: var(--color-danger); }
+.status-unknown { background: var(--color-unknown); }
+
+/* Appointment time row in card */
+.appt-time { opacity: 0.8; }
+
+/* Responsiveness and sticky first column on small screens */
+@media (max-width: 900px) {
+  .summary-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Hide summary stats on smaller screens */
+@media (max-width: 768px) {
+  .summary-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-container-1 {
+    padding: 0;
+  }
+  .summary-bar {
+    grid-template-columns: 1fr; /* won't apply when hidden above */
+  }
+
+  .calendar-wrapper {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .calendar-grid { min-width: 700px; }
+
+  /* Keep the time column sticky; allow horizontal scroll for the rest */
+  .time-col-header, .time-col {
+    left: 0;
+    z-index: 20;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: popIn 0.3s ease-in-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--color-primary-dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

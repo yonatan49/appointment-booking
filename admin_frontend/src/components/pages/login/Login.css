@@ -1,0 +1,126 @@
+.login-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('src/assets/salon-bg.jpg') center/cover no-repeat;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-overlay);
+  z-index: 2;
+}
+
+.login-box {
+  background: var(--color-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 16px var(--color-shadow);
+  position: relative;
+  z-index: 3;
+}
+
+.login-box .input-error {
+  background-color: var(--color-primary-bg);
+  border: 1px solid var(--color-danger);
+  color: var(--color-text-error);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-size: 1.8rem;
+}
+
+.login-box h1 span {
+  color: var(--color-primary-hover);
+  font-weight: bold;
+}
+
+.login-box p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin: 1rem 0 0.3rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+  outline: none;
+  border-color: var(--color-primary-hover);
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.login-box .error {
+  margin-top: 0.8rem;
+  color: var(--color-danger);
+  font-size: 0.85rem;
+}
+
+.login-box button {
+  margin-top: 1.2rem;
+  background: var(--color-primary-hover);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box .back-link {
+  display: block;
+  margin-top: 1rem;
+  color: var(--color-text-dark);
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .login-box {
+    padding: 1.2rem;
+  }
+}

@@ -1,0 +1,756 @@
+.booking-header {
+  margin-top: 60px;
+  text-align: center;
+  background: var(--color-primary);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.booking-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  box-sizing: border-box;
+  background: var(--color-surface-alt);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.booking-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  border-radius: 8px 8px 0 0;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+.form-wrapper {
+    padding: 1.5rem;
+}
+
+.step {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.step span {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background: #ccc;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  line-height: 44px;
+  margin: 0 auto;
+  transition: background 0.3s;
+}
+
+.step p {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.step.active span,
+.step.done span {
+  background: var(--color-primary);
+}
+
+.step.active p,
+.step.done p {
+  color: var(--color-app-text);
+}
+
+/* Line between steps */
+.step-line {
+  flex: 0 0 30px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  transition: background 0.3s;
+  margin: 0 6px;
+}
+
+.step-line.filled {
+  background: var(--color-primary);
+}
+
+/* SERVICES */
+.services-step h2 {
+  margin-bottom: 0.5rem;
+}
+
+.services-step p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-1 {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+  text-align: start;
+}
+
+.service-card-1:hover {
+  background: var(--color-primary-very-soft);
+}
+
+.service-card-1.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 6px rgba(236, 0, 140, 0.2);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+}
+
+.service-icon {
+  padding-right: 1rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.service-card-1 .price {
+  display: block;
+  font-weight: bold;
+}
+
+.service-card-1 .duration {
+  display: block;
+  margin: 0.35rem 0;
+  font-weight: bold;
+  color: inherit;
+}
+
+.check-icon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+/* WORKERS STEP */
+.workers-step h2 {
+  margin-bottom: 0.5rem;
+}
+
+.workers-step p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.workers-step .btn-inline {
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.worker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.worker-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+  text-align: start;
+}
+
+.worker-card:hover {
+  background: var(--color-primary-very-soft);
+}
+
+.worker-card.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 6px rgba(236, 0, 140, 0.2);
+}
+
+.worker-card.unqualified {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unqualified-label {
+  display: block;
+  margin-top: 0.5rem;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.worker-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.worker-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.worker-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.worker-details h4 {
+  margin-bottom: 2px;
+}
+
+.worker-services {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* DATETIME STEP */
+.datetime-step h2 {
+  margin-bottom: 0.5rem;
+}
+
+.datetime-step p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.datetime-step h3 {
+  margin-bottom: 0.5rem;
+}
+
+.datetime-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.date-column,
+.time-column {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.date-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.date-column h3,
+.time-column h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.date-column .react-datepicker {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+}
+
+/* Stretch the calendar to fill its container horizontally */
+.date-column .react-datepicker {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+.date-column .react-datepicker__month-container {
+  width: 100% !important;
+  float: none !important;
+}
+
+.date-column .react-datepicker__month {
+  width: 100% !important;
+}
+
+/* Make the weeks and day names span the full width */
+.date-column .react-datepicker__day-names,
+.date-column .react-datepicker__week {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 0.25rem;
+}
+
+/* Allow days to flex without fixed widths */
+.date-column .react-datepicker__day-name,
+.date-column .react-datepicker__day,
+.date-column .react-datepicker__time-name {
+  width: 100% !important;
+  margin: 0 !important;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+}
+
+.date-column .react-datepicker__day--disabled {
+  color: #ccc !important;
+  cursor: default;
+}
+
+.date-column .react-datepicker__day--selected,
+.date-column .react-datepicker__day--keyboard-selected {
+  background-color: var(--color-primary) !important;
+  color: white;
+  border-radius: 50%;
+}
+
+.date-column .react-datepicker__day:hover {
+  background-color: var(--color-primary-soft);
+  border-radius: 50%;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.time-btn {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  color: #000;
+}
+
+.time-btn:hover:not(:disabled) {
+  background: var(--color-primary-soft);
+}
+
+.time-btn.selected {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.time-btn:disabled {
+  background: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* DETAILS */
+.details-step h2 {
+  margin-bottom: 0.5rem;
+}
+
+.details-step p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.input-wrapper label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.details-form input,
+.details-form textarea {
+  background: white;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.details-form textarea {
+  resize: vertical;
+}
+
+.booking-summary {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.details-form input:focus,
+.details-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.booking-summary {
+  background: #f5f5f5;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.booking-summary h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.summary-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: #000;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.alert.info {
+  background: #eef6ff;
+  color: #0b63c5;
+  border: 1px solid #b9dcff;
+}
+
+.alert.error {
+  background: #ffecec;
+  color: #c62828;
+  border: 1px solid #ffb3b3;
+}
+
+.alert.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+/* BUTTONS */
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.btn {
+  background: var(--color-primary);
+  font-size: 1rem;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  font-size: 1rem;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  margin-right: 1rem;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-group {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  display: none;
+  font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* Calendar sizing on tablets/smaller laptops */
+  .date-column .react-datepicker {
+    padding: 0.75rem !important;
+    font-size: 0.95rem;
+  }
+
+  .date-column .react-datepicker__day-name,
+  .date-column .react-datepicker__day {
+    aspect-ratio: 1 / 1;
+  }
+  .workers-step .btn-inline {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.8rem;
+  }
+ 
+  .booking-steps {
+    padding: 1rem;
+  }
+
+  .step p {
+    display: none;
+  }
+
+  .step span {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .datetime-grid {
+    flex-direction: column;
+  }
+
+  .date-column,
+  .time-column {
+    width: 100%;
+  }
+
+  .worker-card-inner { flex-direction: row; }
+  .worker-img { width: 64px; height: 64px; border-radius: 50%; }
+  .worker-details { align-items: flex-start; text-align: left; }
+}
+
+@media (max-width: 480px) {
+  /* Compact calendar for small phones while respecting paddings */
+  .date-column .react-datepicker {
+    padding: 0.5rem !important;
+    font-size: 0.9rem;
+  }
+
+  .date-column .react-datepicker__day-name,
+  .date-column .react-datepicker__day {
+    aspect-ratio: 1 / 1;
+  }
+  .date-column .react-datepicker__day-names,
+  .date-column .react-datepicker__week {
+    gap: 0.2rem;
+  }
+  .booking-steps {
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .step span {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    line-height: 36px;
+  }
+
+  .step p {
+    font-size: 0.75rem;
+  }
+
+  .step-line {
+    flex: 0 0 15px;
+    height: 3px;
+    margin: 0 2px;
+  }
+
+  .service-grid, .worker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .btn-icon {
+    display: inline;
+  }
+
+  .btn,
+  .btn-outline {
+    padding: 0.6rem 1rem;
+    font-size: 1.25rem;
+  }
+  .workers-step .btn-inline {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+/* Smaller font for Complete Booking on small screens */
+@media (max-width: 480px) {
+  .btn.btn-complete {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 160ms ease;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 1.25rem 1.25rem 1rem;
+  animation: scaleIn 200ms ease;
+  transform-origin: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.modal-close:hover {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+.modal-content.success {
+  border: 2px solid #2e7d32;
+}
+
+.modal-content.error {
+  border: 2px solid #c62828;
+}
+
+.modal-content.error.no-border {
+  border: none;
+}
+
+.modal-title {
+  margin: 0 0 0.5rem 0;
+  padding-right: 2rem;
+}
+
+.modal-body {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

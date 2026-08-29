@@ -1,0 +1,29 @@
+:root {
+  /* Brand */
+  --color-primary: #e71c60;            /* main brand color */
+  --color-primary-hover: #e71c60e1;      /* hover/active */
+  --color-primary-contrast: #ffffff;   /* text on primary */
+  --color-primary-soft: #f9d6ec;       /* subtle hover/tint */
+  --color-primary-very-soft: #fef3f9;  /* card hover backgrounds */
+
+  /* Surfaces */
+  --color-surface: #ffffff;            /* default white surface */
+  --color-surface-alt: #fff4f4;        /* light pink surface */
+  --color-surface-tint: #ffefff;       /* very light tinted section */
+
+  /* Text & Borders */
+  --color-text: rgba(0, 0, 0, 0.87);
+  --color-text-muted: #555555;
+  --color-border: #dddddd;
+
+  /* App Background */
+  --color-app-bg: #ffffff;             /* page background */
+  --color-app-text: rgba(0, 0, 0, 0.87);
+
+  /* Footer */
+  --color-footer-bg: #0f172a;          /* dark navy */
+  --color-footer-text: #cbd5e1;        /* slate-300 */
+  --color-footer-accent-bg: #334155;   /* slate-700 */
+}
+
+

@@ -1,0 +1,91 @@
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-header {
+  margin-left: 250px;
+  position: fixed;
+  width: calc(100% - 250px);
+  height: 60px;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+  margin-right: 15px;
+}
+
+.dashboard-content {
+  margin-left: 250px;
+  padding: 80px 20px 20px;
+  width: 100%;
+  background: var(--color-bg-alt);
+}
+
+.header-left { display: flex; align-items: center; gap: 12px; }
+.page-title { display: flex; align-items: center; gap: 8px; }
+.page-title .crumb { color: var(--color-text-light); font-weight: 600; }
+.page-title .crumb-sep { color: var(--color-text-muted); font-size: 0.8rem; }
+.page-title .title-text { font-size: 1.1rem; }
+
+.header-right { display: flex; align-items: center; gap: 12px; }
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-gray);
+  background: var(--color-bg);
+  color: var(--color-text-gray);
+  cursor: pointer;
+}
+.icon-btn:hover { background: var(--color-secondary-bg); }
+.icon-btn .notify-dot {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 8px; height: 8px;
+  background: var(--color-notify);
+  border-radius: 50%;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-gray);
+  background: var(--color-bg);
+}
+.user-chip .avatar { font-size: 20px; color: var(--color-text-light); }
+.user-chip .name { font-weight: 600; color: var(--color-text-gray); }
+
+/* Small screen */
+@media (max-width: 768px) {
+  .dashboard-content, .dashboard-header {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide the page title on small screens */
+  .page-title { display: none; }
+
+  .user-chip { gap: 6px; padding: 4px 8px; }
+  .user-chip .avatar { font-size: 18px; }
+  .user-chip .name { font-size: 0.95rem; }
+}

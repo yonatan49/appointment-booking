@@ -1,0 +1,75 @@
+.sidebar {
+  width: 250px;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-secondary-border);
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .close-btn {
+  display: none;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.admin-welcome {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.sidebar-nav a.active,
+.sidebar-nav a:hover {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+/* Small screen behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar .close-btn {
+    display: block;
+  }
+}
