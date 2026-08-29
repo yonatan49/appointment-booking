@@ -25,4 +25,4 @@ A full-stack appointment booking system for beauty and nail salons. Customers ca
 
 - Customer-facing salon landing page and service booking experience
 - Admin login and weekly appointment-management dashboard
-  ![Home](IMAGES/screenshot (32).jpg)
+  ![Home](IMAGES/screenshot (32).png)
